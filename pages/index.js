@@ -11,15 +11,13 @@ export default function Home() {
         router.push('/api/hello');
     };
 
-    const getClientes = async () => {
-        try {
-            const { data: response } = await axios.get(`/api/clientes`);
-            console.log(response.data);
-        } catch (error) {
-            console.log(error);
-        }
+    const getClientes = () => {
+        fetch('/api/clientes')
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
     };
-
     return (
         <div className={styles.container}>
             <Head>

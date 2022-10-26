@@ -11,7 +11,7 @@ const clientes = async (req, res) => {
                 // },
                 order: [['id', 'ASC']],
             });
-            res.status(200).json({
+            res.status(200).send({
                 data: clientes,
             });
         } catch (error) {
