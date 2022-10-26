@@ -4,19 +4,17 @@ import { Cliente } from '../../../models/clientes';
 //     res.status(200).json({ name: 'John Doe' })
 //   }
 
-const clientes = async (req, res) => {
+export default async function clientes(req, res) {
     //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
-    const clientes = await Cliente.findAll({
-        // include: {
-        //     model: Maquina,
-        //     attributes: ['NroMaquina', 'Descripcion'],
-        // },
-        order: [['id', 'ASC']],
-    });
+    const clientes = await Cliente.findAll({ raw: true });
     console.log(clientes);
-    res.status(200).json({
-        name: 'John Doe',
+    res.status(200).send({
+        clientes,
     });
+    // const datos = await clientes.json();
+    // res.status(200).json({
+    //     name: 'John Doe',
+    // });
 
     // } else if (req.method === 'POST') {
     //     //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
@@ -53,6 +51,4 @@ const clientes = async (req, res) => {
     //         console.log(error);
     //     }
     // }
-};
-
-export default clientes;
+}
