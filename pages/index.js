@@ -12,12 +12,13 @@ export default function Home() {
     };
 
     const getClientes = () => {
-        fetch('/api/clientes', {
-            headers: {
-                'Content-Type': 'application/json',
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-        })
+        // fetch('/api/clientes', {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         // 'Content-Type': 'application/x-www-form-urlencoded',
+        //     },
+        // })
+        fetch('/api/clientes')
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
