@@ -7,7 +7,7 @@ import { Cliente } from '../../../models/clientes';
 export default async function clientes(req, res) {
     //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
     const clientes = await Cliente.findAll({ raw: true });
-    console.log(clientes);
+    // console.log(clientes);
     // res.status(200).send({
     //     clientes,
     // });
