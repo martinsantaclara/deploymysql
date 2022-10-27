@@ -20,8 +20,8 @@ export default function Home() {
         // })
         fetch('/api/clientes')
             .then((res) => {
-                console.log(res);
                 res.json();
+                console.log(res);
             })
             .then((data) => {
                 console.log(data);
