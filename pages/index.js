@@ -11,21 +11,20 @@ export default function Home() {
         router.push('/api/hello');
     };
 
-    const getClientes = () => {
+    // const { data, error } = useSWR('/api/users', fetcher);
+    // if (error) return <div>An error occured.</div>;
+    // if (!data) return <div>Loading ...</div>;
+    // console.log(data);
+    const getUsers = () => {
         // fetch('/api/clientes', {
         //     headers: {
         //         'Content-Type': 'application/json',
         //         // 'Content-Type': 'application/x-www-form-urlencoded',
         //     },
         // })
-        fetch('/api/clientes')
-            .then((res) => {
-                res.json();
-                console.log(res.json());
-            })
-            .then((data) => {
-                console.log(data);
-            });
+        fetch('/api/users')
+            .then((response) => response.json()) // ⬅️ 2) cuando la petición finalice, transformamos la respuesta a JSON (response.json() también es una Promise)
+            .then((dog) => console.log(dog));
     };
     return (
         <div className={styles.container}>
@@ -44,7 +43,7 @@ export default function Home() {
                 </h1>
 
                 <button onClick={goHello}>Ir a Hello</button>
-                <button onClick={getClientes}>Fetch Clientes</button>
+                <button onClick={getUsers}>Fetch Users</button>
 
                 <p className={styles.description}>
                     Get started by editing{' '}
