@@ -21,7 +21,7 @@ export default function Home() {
         fetch('/api/clientes')
             .then((res) => {
                 res.json();
-                console.log(res);
+                console.log(res.json());
             })
             .then((data) => {
                 console.log(data);
