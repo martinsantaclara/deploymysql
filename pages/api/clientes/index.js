@@ -4,7 +4,7 @@ import { Cliente } from '../../../models/clientes';
 //     res.status(200).json({ name: 'John Doe' })
 //   }
 
-export default async function handler(req, res) {
+export default function handler(req, res) {
     //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
     // const clientes = await Cliente.findAll({ raw: true });
     // console.log(clientes);
