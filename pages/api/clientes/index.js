@@ -12,6 +12,9 @@ export default async function clientes(req, res) {
     //     clientes,
     // });
     // const datos = await clientes.json();
+
+    console.log(req);
+
     res.status(200).json({
         name: 'John Doe',
     });
