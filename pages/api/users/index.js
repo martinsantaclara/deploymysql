@@ -4,12 +4,12 @@ const prisma = new PrismaClient();
 // Required fields in body: title
 // Optional fields in body: content
 
-const users = async (req, res) => {
+const handler = async (req, res) => {
     const allUsers = await prisma.cliente.findMany();
     console.log(allUsers);
     res.status(200).json(allUsers);
 };
-export default users;
+export default handler;
 
 // export default async function handle(req, res) {
 //     const allUsers = await prisma.cliente.findMany();

@@ -15,6 +15,17 @@ export default function Home() {
     // if (error) return <div>An error occured.</div>;
     // if (!data) return <div>Loading ...</div>;
     // console.log(data);
+
+    const getClientesConAxios = async () => {
+        try {
+            const { data } = await axios.get(`/api/users`);
+            const users = await data;
+            console.log(users);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     const getUsers = () => {
         // fetch('/api/clientes', {
         //     headers: {
@@ -44,6 +55,9 @@ export default function Home() {
 
                 <button onClick={goHello}>Ir a Hello</button>
                 <button onClick={getUsers}>Fetch Users</button>
+                <button onClick={getClientesConAxios}>
+                    Fetch Users con Axios
+                </button>
 
                 <p className={styles.description}>
                     Get started by editing{' '}
